@@ -176,12 +176,40 @@ footer a { color: var(--milk); }
 .doc th, .doc td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--line); }
 .doc th { font-weight: 600; background: var(--white); }
 
+/* Возможности */
+.features { padding-top: 0; }
+.features .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.features article {
+  background: var(--white); border: 1px solid var(--line); border-radius: var(--radius-sm);
+  padding: 24px 24px 20px; border-top: 4px solid var(--amber);
+}
+.features h3 { font-size: 20px; margin: 0 0 8px; }
+.features p { margin: 0; color: var(--ink-soft); }
+
+/* Вопросы и ответы */
+.faq { border-top: 1px solid var(--line); }
+.faq details { border-bottom: 1px solid var(--line); }
+.faq summary {
+  cursor: pointer; list-style: none; padding: 16px 32px 16px 0; font-weight: 600;
+  position: relative;
+}
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after {
+  content: "+"; position: absolute; right: 4px; top: 12px;
+  font-size: 24px; color: var(--green); font-weight: 400;
+}
+.faq details[open] summary::after { content: "–"; }
+.faq details > div { padding: 0 0 18px; color: var(--ink-soft); }
+
+footer .links { display: flex; flex-wrap: wrap; gap: 6px 18px; }
+
 /* Телефоны */
 @media (max-width: 860px) {
   .hero .wrap { grid-template-columns: 1fr; padding-top: 32px; padding-bottom: 120px; gap: 40px; }
   .phone { width: min(280px, 100%); }
   .steps { grid-template-columns: 1fr; gap: 32px; }
   .farmers .wrap, .contacts .wrap { grid-template-columns: 1fr; gap: 32px; }
+  .features .grid { grid-template-columns: 1fr; }
   section { padding: 64px 0; }
 }
 @media (max-width: 560px) {
